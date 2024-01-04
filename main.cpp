@@ -5,76 +5,116 @@ using namespace std;
 
 class TierOne {
 public:
-    string name;
-    TierOne(string _name) {
+    
+    TierOne(string _name, uint8_t _health, int8_t _armor, int8_t _strength) {
         this->name = _name;
+        this->health = _health;
+        this->armor = _armor;
+        this->strength = _strength;
     }
     virtual void createTireOne() = 0;
+protected:
+    string name;
+    uint8_t health;
+    int8_t armor;  
+    int8_t strength;     
 };
 
 class TierTwo {
 public:
-    string name;
-    TierTwo(string _name) {
+    TierTwo(string _name, uint8_t _health, int8_t _armor, int8_t _strength) {
         this->name = _name;
+        this->health = _health;
+        this->armor = _armor;
+        this->strength = _strength;
     }
     virtual void createTireTwo() = 0;
+protected:
+    string name;
+    uint8_t health;
+    int8_t armor;  
+    int8_t strength;  
 };
 
 class TierThree {
 public:
-    string name;
-    TierThree(string _name) {
+    TierThree(string _name, uint8_t _health, int8_t _armor, int8_t _strength) {
         this->name = _name;
+        this->health = _health;
+        this->armor = _armor;
+        this->strength = _strength;
     }
     virtual void createTireThree() = 0;
+protected:
+    string name;
+    uint8_t health;
+    int8_t armor;  
+    int8_t strength;    
 };
 
 class HumanTierOne : public TierOne {
 public:
-    HumanTierOne() : TierOne("Footman") {}
+    HumanTierOne() : TierOne("Footman", 100, 50, 80) {}
     void createTireOne() {
-        cout << "Create " << name << endl;
+        cout << "Create tire 1 race Human: " << name << endl;
+        cout << "Health: " << (int)health << endl;
+        cout << "Armor: " << (int)armor << endl;
+        cout << "Strength: " << (int)armor << endl << endl;
     }
 };
 
 class HumanTierTwo : public TierTwo {
 public:
-    HumanTierTwo() : TierTwo("Priest") {}
+    HumanTierTwo() : TierTwo("Priest", 120, 60, 100) {}
     void createTireTwo() {
-        cout << "Create " << name << endl;
+        cout << "Create tire 2 race Human: " << name << endl;
+        cout << "Health: " << (int)health << endl;
+        cout << "Armor: " << (int)armor << endl;
+        cout << "Strength: " << (int)armor << endl << endl;
     }
 };
 
 class HumanTierThree : public TierThree {
 public:
-    HumanTierThree() : TierThree("Knight") {}
+    HumanTierThree() : TierThree("Knight", 150, 100, 125) {}
     void createTireThree() {
-        cout << "Create " << name << endl;
+        cout << "Create tire 3 race Human: " << name << endl;
+        cout << "Health: " << (int)health << endl;
+        cout << "Armor: " << (int)armor << endl;
+        cout << "Strength: " << (int)armor << endl << endl;
     }
 };
 
 class OrcTierOne : public TierOne {
 public:
-    OrcTierOne() : TierOne("Grunt") {}
+    OrcTierOne() : TierOne("Grunt", 100, 50, 80) {}
     void createTireOne() {
-        cout << "Create " << name << endl;
+        cout << "Create tire 1 race Orc: " << name << endl;
+        cout << "Health: " << (int)health << endl;
+        cout << "Armor: " << (int)armor << endl;
+        cout << "Strength: " << (int)armor << endl << endl;
     }
 };
 
 class OrcTierTwo : public TierTwo {
 public:
-    OrcTierTwo() : TierTwo("Shaman") {}
+    OrcTierTwo() : TierTwo("Shaman", 120, 60, 100) {}
     void createTireTwo() {
-        cout << "Create " << name << endl;
+        cout << "Create tire 2 race Orc: " << name << endl;
+        cout << "Health: " << (int)health << endl;
+        cout << "Armor: " << (int)armor << endl;
+        cout << "Strength: " << (int)armor << endl << endl;
     }
 };
 
 class OrcTierThree : public TierThree {
 public:
-    OrcTierThree() : TierThree("Tauren") {}
+    OrcTierThree() : TierThree("Tauren", 150, 100, 125) {}
     void createTireThree() {
-        cout << "Create " << name << endl;
+        cout << "Create tire 3 race Orc: " << name << endl;
+        cout << "Health: " << (int)health << endl;
+        cout << "Armor: " << (int)armor << endl;
+        cout << "Strength: " << (int)armor << endl << endl;
     }
 };
 
