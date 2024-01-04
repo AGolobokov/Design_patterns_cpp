@@ -118,14 +118,14 @@ public:
     }
 };
 
-class Factory {
+class IFactory {
 public:
     virtual TierOne* getTierOne() = 0;
     virtual TierTwo* getTierTwo() = 0;
     virtual TierThree* getTierThree() = 0;
 };
 
-class HumanFactory : public Factory {
+class HumanFactory : public IFactory {
 public:
     TierOne* getTierOne() {
         return new HumanTierOne();
@@ -138,7 +138,7 @@ public:
     }
 };
 
-class OrcFactory : public Factory {
+class OrcFactory : public IFactory {
 public:
     TierOne* getTierOne() {
         return new OrcTierOne();
@@ -153,8 +153,8 @@ public:
 
 class Player {
 public:
-    Factory* factory;
-    Player(Factory* factory) {
+    IFactory* factory;
+    Player(IFactory* factory) {
         this->factory = factory;
     }
     void CreateUnits() {
@@ -167,7 +167,7 @@ public:
     }
 };
 
-Factory* createFactory(string race) {
+IFactory* createFactory(string race) {
     if (race == "Human") {
         return new HumanFactory();
     }
